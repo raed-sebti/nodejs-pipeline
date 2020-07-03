@@ -36,7 +36,7 @@ node {
     stage('Run Container') {
      docker.withServer('tcp://192.168.1.11:2375') {
      docker.image('registry.hub.docker.com/raedsebti/hellonode:latest').withRun('-p 8090:8080') {c ->
-           sh "sleep 60"
+           sh "sleep 10 "
        }
      }
    }
