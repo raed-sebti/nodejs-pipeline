@@ -35,7 +35,9 @@ node {
     }
     stage('Run Container') {
         docker.withServer('tcp://192.168.1.11:2375') {
-        docker.image('registry.hub.docker.com/raedsebti/hellonode:latest').withRun('-p 8090:8080') 
+        docker.image('registry.hub.docker.com/raedsebti/hellonode:latest').withRun('-p 8090:8080'){
+        sh 'echo "Start Container"'
+       }
         }
    }
 }
