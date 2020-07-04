@@ -34,11 +34,12 @@ node {
         }
     }
     stage('Run Container') {
-        docker.withServer('tcp:192.168.1.11//:2345') {
-        docker.image('registry.hub.docker.com/raedsebti/hellonode:latest').withRun('-p 8080:8080') {
+        docker.withServer('tcp://192.168.1.15:2375') {
+        docker.image('registry.hub.docker.com/raedsebti/hellonode:latest').withRun('-p 8080') {c ->
+           sh "sleep 10 "
+       }
+     }
+   }
 
-        }
-        }
-    }
 
 }
